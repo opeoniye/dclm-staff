@@ -17,8 +17,39 @@ scoop install nodejs nvm
 -  get yarn
 scoop install yarn
 +
+- get openssh
+scoop install sudo
+scoop install openssh
+'openssh' (9.2.0.0p1) was installed successfully!
+Notes
+-----
+Windows 10 or higher includes this build of OpenSSH in the system itself, hence it is 
+recommended to use the system OpenSSH there.
+Run 'sudo C:\Users\bams-zoom\scoop\apps\openssh\current\install-sshd.ps1' to install  
+sshd and ssh-agent as a service.
+Run 'sudo C:\Users\bams-zoom\scoop\apps\openssh\current\uninstall-sshd.ps1' to        
+uninstall the services.
+
++
 - set nodejs version
 nvm install 8.11.2
 nvm use 8.11.2
 node -v
 npm -v
+
+
+-- setup git/github
+scoop install gh
+ssh-keygen -t ed25519 -C "opeoniye@gmail.com"
+mkdir ~/.ssh
+mv ~/dev/code/bams ~/.ssh/
+mv ~/dev/code/bams.pub ~/.ssh/
+ls -la ~/.ssh
++
+eval "$(ssh-agent -s)"
++
+ssh-add ~/.ssh/bams
++
+cat ~/.ssh/bams.pub
++
+gh repo create

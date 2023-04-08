@@ -7,3 +7,8 @@ project:        dclm-staff-backend
 touch index.js
 npm init -y
 npm install body-parser express cors mongoose nodemon
+
+
+
+git config --global user.email "opeoniye@gmail.com"
+git config --global user.name "Samuel John"
