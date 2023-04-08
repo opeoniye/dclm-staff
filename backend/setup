@@ -1,0 +1,9 @@
+project:        dclm-staff-backend
+
+
+
+
+-- setup
+touch index.js
+npm init -y
+npm install body-parser express cors mongoose nodemon

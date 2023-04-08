@@ -1,0 +1,59 @@
+project:        dclm-staff-frontend
+
+
+
+
+-- setup
+ref: https://www.youtube.com/watch?v=VsUzmlZfYNg
+npm i npx -g
+npx create-react-app app
+cp -ar app/* .
+rm -rf app
+get https://gist.github.com/adrianhajdin/bbe19d3a3055e3c7b66b0bfac25c5c49
+into package.json
+npm install --legacy-peer-deps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- issues
+E: opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+A: ref: https://dev.to/jasoncruzdev/how-to-solve-opensslerrorstack-error03000086digital-envelope-routinesinitialization-error-error--2jd7
+I did below and it worked:
+replace "start": "react-scripts start" by "start": "react-scripts --openssl-legacy-provider start"
+replace "build": "react-scripts build" by "build": "react-scripts --openssl-legacy-provider build"
