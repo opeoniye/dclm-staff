@@ -1,9 +1,8 @@
-project:        dclm-staff
+project:    dclm-staff
+repo:       https://github.com/opeoniye/dclm-staff
 
-
-
-
-## setup
+-- setup
+ref: https://spin.atomicobject.com/2018/06/18/windows-node-js/
 - install scoop (windows)
 ref: https://scoop.sh/
 +
@@ -11,8 +10,14 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm get.scoop.sh | iex
 scoop --version
 +
-- install nodejs, nvm
+- get nodejs, nvm
 scoop install nodejs nvm
++
+- set nodejs version
+nvm install 8.11.2
+nvm use 8.11.2
+node -v
+npm -v
 +
 -  get yarn
 scoop install yarn
@@ -30,16 +35,12 @@ sshd and ssh-agent as a service.
 Run 'sudo C:\Users\bams-zoom\scoop\apps\openssh\current\uninstall-sshd.ps1' to        
 uninstall the services.
 
-+
-- set nodejs version
-nvm install 8.11.2
-nvm use 8.11.2
-node -v
-npm -v
-
-
--- setup git/github
+-- setup ssh git/github
+scoop install git
 scoop install gh
+git config --global user.email "opeoniye@gmail.com"
+git config --global user.name "Samuel John"
++
 ssh-keygen -t ed25519 -C "opeoniye@gmail.com"
 mkdir ~/.ssh
 mv ~/dev/code/bams ~/.ssh/
@@ -52,4 +53,5 @@ ssh-add ~/.ssh/bams
 +
 cat ~/.ssh/bams.pub
 +
+gh auth login
 gh repo create
